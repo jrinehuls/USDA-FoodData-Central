@@ -1,11 +1,24 @@
 package com.jrinehuls.usda.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDate;
+
 public class Food {
 
     private Long fdcId;
     private String footnote;
     private String description;
     private String publicationDate;
+    /* Do someday
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+    private LocalDate publicationDate;
+    */
+    private String dataType;
+    private String foodClass;
+    private String scientificName;
+    private Integer ndbNumber; // maybe Long
+    private Boolean isHistoricalReference;
 
     public Food() {
 
@@ -41,5 +54,45 @@ public class Food {
 
     public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public String getDataType() {
+        return dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public String getFoodClass() {
+        return foodClass;
+    }
+
+    public void setFoodClass(String foodClass) {
+        this.foodClass = foodClass;
+    }
+
+    public String getScientificName() {
+        return scientificName;
+    }
+
+    public void setScientificName(String scientificName) {
+        this.scientificName = scientificName;
+    }
+
+    public Integer getNdbNumber() {
+        return ndbNumber;
+    }
+
+    public void setNdbNumber(Integer ndbNumber) {
+        this.ndbNumber = ndbNumber;
+    }
+
+    public Boolean getHistoricalReference() {
+        return isHistoricalReference;
+    }
+
+    public void setHistoricalReference(Boolean historicalReference) {
+        isHistoricalReference = historicalReference;
     }
 }
